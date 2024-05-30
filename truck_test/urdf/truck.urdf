@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="truck">
+  <link
+    name="base_foot_link">
+    <inertial>
+      <origin
+        xyz="0.149364596091232 0.0735748884571909 0.0458714728604799"
+        rpy="0 0 0" />
+      <mass
+        value="0.00329059189741929" />
+      <inertia
+        ixx="3.33360012444753E-07"
+        ixy="-3.17875090792495E-08"
+        ixz="2.02132254821364E-08"
+        iyy="1.51567056477323E-07"
+        iyz="2.44345485917749E-08"
+        izz="4.20844971700933E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/base_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/base_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0571870492646077 0.00152942126192634 0.0351547166257295"
+        rpy="0 0 0" />
+      <mass
+        value="2.54362492548746" />
+      <inertia
+        ixx="0.0141059904322479"
+        ixy="-1.94676404749401E-05"
+        ixz="-0.00161887250117831"
+        iyy="0.021763000017977"
+        iyz="1.20897893057005E-05"
+        izz="0.0281202665524858" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.10588"
+      rpy="0 0 0" />
+    <parent
+      link="base_foot_link" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="steering_link">
+    <inertial>
+      <origin
+        xyz="-0.00809574972935118 0.000146527137777075 0.00106584628509848"
+        rpy="0 0 0" />
+      <mass
+        value="0.000177580101022866" />
+      <inertia
+        ixx="4.39287429504618E-10"
+        ixy="7.69455139801974E-11"
+        ixz="1.22134733752011E-25"
+        iyy="4.68920025326724E-09"
+        iyz="1.15135860997017E-25"
+        izz="5.01010094875662E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/steering_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/steering_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steering_link_joint"
+    type="revolute">
+    <origin
+      xyz="0.18079 0.01805 -0.053977"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="steering_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="steering_bar_link">
+    <inertial>
+      <origin
+        xyz="-0.000112214401346344 0.0240720165226059 0.000951686933934603"
+        rpy="0 0 0" />
+      <mass
+        value="0.000509801766064768" />
+      <inertia
+        ixx="1.09803905843415E-07"
+        ixy="5.06029033550633E-10"
+        ixz="-2.56929051065603E-12"
+        iyy="1.25389419054579E-09"
+        iyz="5.51159236145105E-10"
+        izz="1.10621791754284E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/steering_bar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/steering_bar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steering_bar_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.014998 0.00027144 -0.0018634"
+      rpy="0 0 0" />
+    <parent
+      link="steering_link" />
+    <child
+      link="steering_bar_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="steering_ackermann_link">
+    <inertial>
+      <origin
+        xyz="-0.0162125525022698 0.00880394859060474 -0.00616513794464063"
+        rpy="0 0 0" />
+      <mass
+        value="0.00329059189741931" />
+      <inertia
+        ixx="3.33360012443719E-07"
+        ixy="-3.17875090822137E-08"
+        ixz="2.02132254825356E-08"
+        iyy="1.51567056478362E-07"
+        iyz="2.4434548591446E-08"
+        izz="4.20844971700937E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/steering_ackermann_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/steering_ackermann_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steering_ackermann_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00021653 0.046449 0.002"
+      rpy="0 0 0" />
+    <parent
+      link="steering_bar_link" />
+    <child
+      link="steering_ackermann_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="left_ackermann_bar_link">
+    <inertial>
+      <origin
+        xyz="-0.000128983955967443 -0.057332495917683 -0.00103911435415588"
+        rpy="0 0 0" />
+      <mass
+        value="0.00155415624671255" />
+      <inertia
+        ixx="1.87406528464053E-06"
+        ixy="-4.20753453029524E-09"
+        ixz="2.21004078672863E-24"
+        iyy="3.8541082668757E-09"
+        iyz="-1.71942832600246E-22"
+        izz="1.87656383189001E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_ackermann_bar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_ackermann_bar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ackermann_bar_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.033537 -0.0077744 0.003"
+      rpy="0 0 0" />
+    <parent
+      link="steering_ackermann_link" />
+    <child
+      link="left_ackermann_bar_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="right_ackermann_bar_link">
+    <inertial>
+      <origin
+        xyz="0.0172459933658008 -0.0165781247573197 -0.00929578556070748"
+        rpy="0 0 0" />
+      <mass
+        value="0.0030483338352787" />
+      <inertia
+        ixx="3.06274440421838E-07"
+        ixy="5.60302443658449E-08"
+        ixz="2.68901028119551E-08"
+        iyy="1.24602186074134E-07"
+        iyz="-1.81756143730051E-08"
+        izz="3.74172791419759E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_ackermann_bar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_ackermann_bar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ackermann_bar_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00025797 -0.11466 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_ackermann_bar_link" />
+    <child
+      link="right_ackermann_bar_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="left_ackermann_axis_link">
+    <inertial>
+      <origin
+        xyz="-0.0012149996490235 0.00907488845721133 -0.00916513794464074"
+        rpy="0 0 0" />
+      <mass
+        value="0.00329059189741931" />
+      <inertia
+        ixx="3.33360012443719E-07"
+        ixy="-3.17875090822137E-08"
+        ixz="2.02132254825356E-08"
+        iyy="1.51567056478362E-07"
+        iyz="2.4434548591446E-08"
+        izz="4.20844971700937E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_ackermann_axis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_ackermann_axis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ackermann_axis_link"
+    type="revolute">
+    <origin
+      xyz="0.15058 0.0645 -0.05084"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_ackermann_axis_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="left_front_wheel_link">
+    <inertial>
+      <origin
+        xyz="3.90069387198322E-05 1.01119320217169E-06 -0.00377020726363825"
+        rpy="0 0 0" />
+      <mass
+        value="0.0954837754267824" />
+      <inertia
+        ixx="6.01816353958352E-05"
+        ixy="-2.72457581371091E-11"
+        ixz="5.14224985313796E-12"
+        iyy="6.01816095078067E-05"
+        iyz="-1.00614831624928E-11"
+        izz="0.000113931189154335" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_wheel_link_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00069541232345971 0.0384937189901582 -0.00999999999997819"
+      rpy="-1.5707963267949 0 0.0180636400884608" />
+    <parent
+      link="left_ackermann_axis_link" />
+    <child
+      link="left_front_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_ackermann_axis_link">
+    <inertial>
+      <origin
+        xyz="-0.00155107537865468 -0.00974656515445654 -0.00929578556070737"
+        rpy="0 0 0" />
+      <mass
+        value="0.0030483338352787" />
+      <inertia
+        ixx="3.06274440421838E-07"
+        ixy="5.60302443658449E-08"
+        ixz="2.68901028119551E-08"
+        iyy="1.24602186074134E-07"
+        iyz="-1.81756143730051E-08"
+        izz="3.74172791419759E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_ackermann_axis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_ackermann_axis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ackermann_axis_link_joint"
+    type="revolute">
+    <origin
+      xyz="0.15058 -0.0645 -0.05084"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_ackermann_axis_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.61"
+      upper="0.463"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="right_front_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.000106518988205184 -2.29578938859554E-06 -0.00376890349973655"
+        rpy="0 0 0" />
+      <mass
+        value="0.0954837755794549" />
+      <inertia
+        ixx="6.01989028779244E-05"
+        ixy="-2.61539045616007E-11"
+        ixz="9.63184032944099E-07"
+        iyy="6.01816077958912E-05"
+        iyz="1.03234315798517E-11"
+        izz="0.000113913923556393" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_wheel_link_joint"
+    type="continuous">
+    <origin
+      xyz="0.000690029061926722 -0.0384938158655867 -0.0100000000000002"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="right_ackermann_axis_link" />
+    <child
+      link="right_front_wheel_link" />
+    <axis
+      xyz="-0.0179228327773555 0 -0.999839373132122" />
+  </joint>
+  <link
+    name="left_rear_wheel_link">
+    <inertial>
+      <origin
+        xyz="3.72470881213061E-06 6.61294369180832E-06 -0.0124999999960729"
+        rpy="0 0 0" />
+      <mass
+        value="0.190967548986854" />
+      <inertia
+        ixx="0.000120363243541941"
+        ixy="-1.78457818162119E-15"
+        ixz="-5.00722971060535E-12"
+        iyy="0.000120363243539778"
+        iyz="2.8573467366484E-12"
+        izz="0.000227862374445363" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_rear_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/left_rear_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_rear_wheel_link_joint"
+    type="continuous">
+    <origin
+      xyz="-0.109420404259597 0.0979999999999999 -0.0603401219296155"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_rear_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_rear_wheel_link">
+    <inertial>
+      <origin
+        xyz="4.54253573922703E-07 7.57613680846259E-06 -0.0125"
+        rpy="0 0 0" />
+      <mass
+        value="0.190967548732493" />
+      <inertia
+        ixx="0.000120363243460174"
+        ixy="-2.49227507575912E-16"
+        ixz="-5.75470959616208E-12"
+        iyy="0.000120363243456033"
+        iyz="3.45043912544429E-13"
+        izz="0.000227862374314334" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_rear_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/right_rear_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_rear_wheel_link_joint"
+    type="continuous">
+    <origin
+      xyz="-0.109420404259598 -0.0980000000000001 -0.0603401219296153"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_rear_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="-0.000113532404852179 1.62053881119784E-06 -0.0233005137104914"
+        rpy="0 0 0" />
+      <mass
+        value="0.100147891507521" />
+      <inertia
+        ixx="3.40965726925053E-05"
+        ixy="-3.33102563064324E-10"
+        ixz="-6.31859855327339E-09"
+        iyy="3.40892139579411E-05"
+        iyz="-3.02743992666142E-09"
+        izz="4.20987590785038E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://truck/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_link_joint"
+    type="fixed">
+    <origin
+      xyz="0.143673590696658 -0.00061460475494024 0.208423267263462"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

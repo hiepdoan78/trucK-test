@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'steering_link_joint', 'steering_bar_link_joint', 'steering_ackermann_link_joint', 'left_ackermann_bar_link_joint', 'right_ackermann_bar_link_joint', 'left_ackermann_axis_link', 'left_front_wheel_link_joint', 'right_ackermann_axis_link_joint', 'right_front_wheel_link_joint', 'left_rear_wheel_link_joint', 'right_rear_wheel_link_joint', ]
